@@ -1,1 +1,1 @@
-web: GUNICORN_CMD_ARGS="--bind=127.0.0.1 --workers=3" gunicorn hello_world:app
+web: gunicorn -w 4 --reload -b localhost:5000 "app:create_app(testing=True)"
